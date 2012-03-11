@@ -1,4 +1,4 @@
-!SLIDE center 
+!SLIDE center
 # What does Bundler bundling look like to you?
 
 - /insert image of cotton wall/
