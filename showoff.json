@@ -1,0 +1,13 @@
+{
+    "name": "Bundler Pain Points",
+    "description": "Example Presentation",
+    "sections": [{
+        "section": "intro"
+    },
+    {
+        "section": "pain_points"
+    },
+    {
+        "section": "conclusion"
+    }]
+}
