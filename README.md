@@ -1,9 +1,7 @@
-The quiet and versatile Rubyist
--------------------------------
+Bundler: the Pain Points
+------------------------
 
-(or how to learn to put up with the tools you’ve got)
-
-## Building the Presention
+## Building the Presentation
 
 This presentation is built with [Showdown][showon].
 
