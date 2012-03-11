@@ -3,9 +3,10 @@
 
 ## Why?
 
-- test against multiple versions of a resource (for example, in CI)
+- test against multiple versions of a resource (for example, in CI) _(problem A)_
 - facilitates developing componentised systems:
   (perhaps working against a git repository of a dependency, or an Engine in git)
+  _(problem B)_
 
 .notes Travis CI allows you to specify multiple Gemfiles in your .travis.yml.
 .notes The Engines issue is my big motivation for trying to deal with this issue.
@@ -18,7 +19,7 @@ Concept is EASY: Use multiple Gemfiles
 
 !SLIDE
 # III. Declaring a Dependency more than once
-## Fix
+## Fix for problem A
 
 Multiple `Gemfile`s, where you want to use different versions or tighten versions
 that might have been defined in the `.gemspec`.
@@ -36,9 +37,13 @@ I've seen this solution used by Ripple, for example.
 
 !SLIDE
 # III. Declaring a Dependency more than once
-## Fix
+## Fix for problem B
 
-Set `BUNDLE_GEMFILE`.
+Set `BUNDLE_GEMFILE` and use a `Gemfile.local`
+
+
+!SLIDE code
+# Generate a Gemfile.local using Rake
 
     @@@ruby
     task :local_gemfile do
@@ -48,6 +53,8 @@ Set `BUNDLE_GEMFILE`.
     end
 
 <https://gist.github.com/2016633>
+
+.notes A pain to by hand so use Rake.
 
 !SLIDE
 # III. Declaring a Dependency more than once
