@@ -1,30 +1,29 @@
-!SLIDE smbullets incremental
+!SLIDE bullets incremental
 # III. Declaring a Dependency more than once
 
-# Why?
+## Why?
 
-- a. test against multiple versions of a resource (for example, in CI)
-- b. working against a git respository of a dependency (for example, you're using Engines)
+- test against multiple versions of a resource (for example, in CI)
+- facilitates developing componentised systems:
+  (perhaps working against a git repository of a dependency, or an Engine in git)
 
+.notes Travis CI allows you to specify multiple Gemfiles in your .travis.yml.
 .notes The Engines issue is my big motivation for trying to deal with this issue.
 
-.notes Yes, there are actually four. But 3 and 4 could be considered the same
-issue, even though the mitigation is slightly different.
+!SLIDE
+# III. Declaring a Dependency more than once
+## Fix
+
+Concept is EASY: Use multiple Gemfiles
 
 !SLIDE
 # III. Declaring a Dependency more than once
-# Facilitates developing componentized systems
-
-!SLIDE
-`BUNDLE_GEMFILE`
-
-Solutions is to employ multiple Gemfiles.
-
-Set `BUNDLE_GEMFILE`.
+## Fix
 
 Multiple `Gemfile`s, where you want to use different versions or tighten versions
 that might have been defined in the `.gemspec`.
 
+!SLIDE code
 I've seen this solution used by Ripple, for example.
 
     @@@ ruby
@@ -35,9 +34,11 @@ I've seen this solution used by Ripple, for example.
 
     instance_eval File.read(File.expand_path('../Gemfile', __FILE__))
 
-    @javascript solution for swapping out images
+!SLIDE
+# III. Declaring a Dependency more than once
+## Fix
 
-<https://gist.github.com/2016633>
+Set `BUNDLE_GEMFILE`.
 
     @@@ruby
     task :local_gemfile do
@@ -46,7 +47,7 @@ I've seen this solution used by Ripple, for example.
       File.open('Gemfile.local', 'w') { |file| file.write(gemfile) }
     end
 
-
+<https://gist.github.com/2016633>
 
 !SLIDE
 # III. Declaring a Dependency more than once
@@ -56,18 +57,10 @@ I've seen this solution used by Ripple, for example.
 
     BUNDLE_GEMFILE=Gemfile.local bundle install
 
-    @@@ ruby
+Of course you can wrap this in a script:
+
     local_gemfile_on
     local_gemfile_off
 
-
-    bundle update payango_helpers
-    rake bundle:local_gemfile
-    rake bundle:local_install
-
-
-.notes Still to be fixed: autoloading of Engines, libraries.
-Upgrade `BUNDLE_GEMFILE`.
-
-
-
+.notes Still to be fixed: autoloading of Engines, libraries. Upgrade `BUNDLE_GEMFILE`.
+If you're using Rails 3.1, you may also have to update your `config/boot.rb`

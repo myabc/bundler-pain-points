@@ -1,4 +1,4 @@
-!SLIDE smbullets incremental
+!SLIDE bullets incremental
 # I. Lack of Optional Groups
 ## Why?
 
@@ -21,10 +21,14 @@ exclude rather than include.
 
 !SLIDE
 # I. Lack of Optional Groups
-## Discussion and a Fix
+## Discussion
 
 proposal from **@FooBarWidget** and **@mislav**:
 <https://github.com/carlhuda/bundler/issues/1636>
+
+!SLIDE
+# I. Lack of Optional Groups
+## Fix
 
     bundle install --with=postgresql
 

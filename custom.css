@@ -1,8 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald);
-
 body {
-  /*background-color: #ff0;*/
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
 }
 
 .slide {
@@ -13,8 +11,4 @@ body {
 .slide a {
   color: #ff9;
   text-decoration: none;
-}
-
-code {
-  font-family: Menlo;
 }

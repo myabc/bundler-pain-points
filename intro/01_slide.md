@@ -27,7 +27,7 @@ WrocLove.rb, Wroclow, 11 March 2012 | Lightning Talk
 !SLIDE
 # What I work on #
 
-## DataMapper
+## DataMapper 1.0
 
 .notes Maintain JRuby support for DataMapper. Also worked on things like
 friendly_id, RefineryCMS.
