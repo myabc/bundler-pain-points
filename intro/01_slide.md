@@ -3,7 +3,7 @@
 # Bundler
 # _the Pain Points_
 
-WrocLove.rb, Wroclow, 11 March 2012 | Lightning Talk
+WrocLove.rb, Wroclaw, 11 March 2012 | Lightning Talk
 
 !SLIDE bullets incremental
 
